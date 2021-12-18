@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="newcss.css">
+        <script>
+            function clickbtn(){
+            var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            var regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w@]{8,}$/;
+            var email = document.getElementById("input_text");
+            var password = document.getElementById("input_password");
+            var pass = document.getElementById("input_password").value;
+            var error_msg = document.querySelector(".error_msg");
+
+            if (regexEmail.test(email.value) && regexPassword.test(password.value) && pass == "SmartServTest@123") {
+                 alert("Login Successful");
+                 return true;
+                 
+             } else {
+                
+                  error_msg.style.display = "inline-block";
+		  input_text.style.border = "1px solid #f74040";
+		   input_password.style.border = "1px solid #f74040";
+                  return false;
+             }
+  }
+         
+        </script>
+    </head>
+    <body >
+        <div class="wrapper">
+	<div class="form">
+		<div class="img">
+                    <img src = img/smartserv.png width = "320">
+		</div>
+            <form action="successpage.html" onsubmit="return clickbtn()">
+			<div class="input_wrap">
+				
+				<div class="input_field">
+					<input type="text" class="input" id="input_text" placeholder = "Username">
+                                       
+				</div>
+			</div>
+			<div class="input_wrap">
+				
+				<div class="input_field">
+					<input type="password" class="input" id="input_password" placeholder = "Password">
+                                      
+				</div>
+			</div>
+			<div class="input_wrap">
+		            <span class="error_msg">Incorrect username or password. Please try again</span>		
+                            <input type="submit" id="login_btn" class="btn disabled" value="Login" >
+			</div>
+                        <div style="text-align:center">
+                        <a href="mailto:support@smartserv.io" style="color:grey;"> <u>Forgot Your Password?</u></a>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+                        </div>
+                   
+		</form>
+	</div>
+</div>
+       
+    </body>
+</html>
