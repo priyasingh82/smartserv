@@ -1,0 +1,50 @@
+
+
+
+
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+       $.getJSON('https://s3.amazonaws.com/open-to-cors/assignment.json', 
+       function(data) {
+       
+       $.each(data.products, function(key,value) {
+          var tblRow = "<tr>" + "<td>" + value.subcategory + "</td>" +
+           "<td>" + value.title + "</td>" + "<td>" + value.price + "</td>" + "<td>" + value.popularity + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+
+
+</head>
+
+<body onload="myFunction()">
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>Subcategory</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Popularity</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
